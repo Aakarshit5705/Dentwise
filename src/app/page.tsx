@@ -1,14 +1,28 @@
+import CTA from '@/components/landing/CTA'
+import Footer from '@/components/landing/Footer'
+import Header from '@/components/landing/Header'
+import Hero from '@/components/landing/Hero'
+import HowItWorks from '@/components/landing/HowItWorks'
+import PricingSection from '@/components/landing/PricingSection'
+import WhatToAsk from '@/components/landing/WhatToAsk'
 import { Button } from '@/components/ui/button'
 import { SignUpButton } from '@clerk/nextjs'
+
+
 import React from 'react'
 
-function page() {
+function Home() {
   return (
-   <div>
-    <h1>HomePage</h1>
-    <SignUpButton mode='modal'>Sign Up</SignUpButton>
+   <div className='min-h-screen bg-background'>
+    <Header/>
+    <Hero/>
+    <HowItWorks/>
+    <WhatToAsk/>
+    <PricingSection/>
+    <CTA/>
+    <Footer/>
    </div>
   )
 }
 
-export default page
+export default Home
