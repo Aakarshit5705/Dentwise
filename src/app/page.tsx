@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import CTA from '@/components/landing/CTA'
 import Footer from '@/components/landing/Footer'
 import Header from '@/components/landing/Header'
@@ -7,11 +9,18 @@ import PricingSection from '@/components/landing/PricingSection'
 import WhatToAsk from '@/components/landing/WhatToAsk'
 import { Button } from '@/components/ui/button'
 import { SignUpButton } from '@clerk/nextjs'
+import { currentUser } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
 
 
 import React from 'react'
 
-function Home() {
+async function Home() {
+  const user=await currentUser();
+
+  if(user){
+    redirect("/dashboard")
+  }
   return (
    <div className='min-h-screen bg-background'>
     <Header/>

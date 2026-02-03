@@ -136,9 +136,9 @@ function WhatToAsk() {
               <Image
                 src="/confused.png"
                 alt="AI Assistant"
-                width={500}
-                height={500}
-                className="w-full h-auto max-w-lg object-contain"
+                width={900}
+                height={900}
+                className="w-full h-auto max-w-xl lg:max-w-2xl xl:max-w-3xl object-contain"
               />
             </div>
           </div>
