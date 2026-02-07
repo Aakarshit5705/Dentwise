@@ -8,6 +8,7 @@ import HowItWorks from '@/components/landing/HowItWorks'
 import PricingSection from '@/components/landing/PricingSection'
 import WhatToAsk from '@/components/landing/WhatToAsk'
 import { Button } from '@/components/ui/button'
+import { syncUser } from '@/lib/actions/user.actions';
 import { SignUpButton } from '@clerk/nextjs'
 import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
@@ -17,6 +18,7 @@ import React from 'react'
 
 async function Home() {
   const user=await currentUser();
+  await syncUser();
 
   if(user){
     redirect("/dashboard")
