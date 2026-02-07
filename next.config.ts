@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
@@ -10,7 +9,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "avatar.iran.liara.run",
+        hostname: "api.dicebear.com",   // add this
+      },
+      {
+        protocol: "https",
+        hostname: "ui-avatars.com",     // optional fallback
       },
       {
         protocol: "https",
